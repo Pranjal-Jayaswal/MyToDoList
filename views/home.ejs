@@ -1,11 +1,37 @@
 <html>
 
 <head>
-    <title>AA</title>
+    <title><%=title%></title>
+    <link rel="stylesheet" href="./cssFiles/home.css">
 </head>
 
 <body>
-    <p>BBBBBB</p>
+    <div id="mainBlock">
+        <h3>ToDo App</h3>
+        <div id="mainn">
+            <form action="">
+                <div id="block">
+                    <label for="description">Description:</label><br>
+                    <input type="text" id="description" name="description" required><br>
+                </div>
+                <div id="check1">
+                    <label for="category">Category:</label><br>
+                    <select id="category" name="category">
+                        <option value="Personal">Personal</option>
+                        <option value="Work">Work</option>
+                        <option value="Home">Home</option>
+                        <option value="Spiritual">Spiritual</option>
+                    </select>
+                </div>
+                <div id="check2">
+                    <label for="date">Due Date:</label><br>
+                    <input type="date" id="date" name="date" required><br>
+                </div>
+                <div id="btnSubmit"> <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 
 </html>

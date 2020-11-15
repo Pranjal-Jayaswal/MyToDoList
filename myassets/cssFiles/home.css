@@ -1,0 +1,23 @@
+#mainBlock {
+    margin: auto;
+    width: 50%;
+    background-color: cornflowerblue;
+    box-shadow: 2px 10px 20px 10px #4442b9;
+    height: 100%;
+}
+
+div h3 {
+    color: darkgrey;
+    align-self: auto;
+}
+#block{
+    border: 2px solid red ;
+}
+#check1{
+    background-color: darkorange;
+    display: inline-block;
+}
+#check2{
+    background-color: rgb(36, 12, 92);
+    display: inline-block;
+}
