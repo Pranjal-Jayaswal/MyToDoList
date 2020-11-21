@@ -9,7 +9,7 @@
     <div id="mainBlock">
         <h3>ToDo App</h3>
         <div id="mainn">
-            <form action="">
+            <form action="/createSlip">
                 <div id="block">
                     <label for="description">Description:</label><br>
                     <input type="text" id="description" name="description" required><br>
@@ -30,6 +30,22 @@
                 <div id="btnSubmit"> <button type="submit">Submit</button>
                 </div>
             </form>
+            <div>
+                <ul id="set">
+                    <% for(let i of workk){
+                %>
+                    <li id="contactSlip">
+                        <div> <%=i.description%> </div>
+                        <div> <%=i.type%> </div>
+                        <div> <%=i.dueDate%> </div>
+                    </li>
+
+                    <%
+            } %>
+
+                </ul>
+            </div>
+
         </div>
     </div>
 </body>
