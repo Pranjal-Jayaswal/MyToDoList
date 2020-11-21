@@ -1,30 +1,28 @@
 
 let cl = [
     {
-        description: 'qaaawert',
-        type: '1234567',
-        dueDate:12-12-2020,
+        description: 'picalo',
+        category: '1234567',
+        date:'2012-12-19',
     }, 
     {
-        description: 'qaawswwwwwawert',
-        type: '1234567',
-        dueDate:12-12-2020,
+        description: 'pranjal',
+        category: '1234567',
+        date:'2012-12-19',
     },
-    {
-        description: 'qaaawafaert',
-        type: '1234567',
-        dueDate:12-12-2020,
-    },
-    {
-        description: 'qaaddefaeert',
-        type: '1234567',
-        dueDate:12-12-2020,
-    }
+
 ];
 module.exports.home = function (req, res) {
+
     return res.render('home', {
         title: "toDOlist",
         workk: cl,
     });
 
 }
+module.exports.create = function (req, res) {
+    
+     cl.push(req.body);
+     return res.redirect('/');
+
+};

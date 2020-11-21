@@ -8,11 +8,11 @@ const listSchema =new mongoose.Schema({
     type :{
         type:String,
         required:true,
-    },
-    dueDate:{
-        type:Date,
-        required:true,
     }
+    // dueDate:{
+    //     type:D,
+    //     required:true,
+    // }
 })
 
 const List =mongoose.model('List',listSchema);
