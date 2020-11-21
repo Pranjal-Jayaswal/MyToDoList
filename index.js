@@ -6,7 +6,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const port =8000;
 
 const db=require('./config/mongoose');
-const List=require ('./models/listSchema');
+const List=require ('./models/listSchema'); 
 
 //middleware directing requests to routes folder
 app.use('/', require('./routes'));
@@ -14,14 +14,6 @@ app.use('/', require('./routes'));
 
 //middleware allowing access to static files like css files for home.ejs
 app.use(express.static('myassets'));
-
-// app.use(express.urlencoded());
-
-
-// //  parse incoming Request Object as a JSON Object 
-// var bodyParser = require('body-parser');
-// app.use(bodyParser.urlencoded({ extended: true }));
-
 
 
 //setting different fields for the created express app

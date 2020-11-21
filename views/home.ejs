@@ -2,22 +2,25 @@
 
 <head>
     <title><%=title%></title>
+    <script src="https://kit.fontawesome.com/52f6d7bc9d.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="./cssFiles/home.css">
 </head>
 
 <body>
     <div id="mainBlock">
-        <h3>ToDo App</h3>
+        <div class="monospace">
+            <h1><i class="fas fa-address-book"></i> &nbsp;ToDo App</h1>
+        </div>
         <div id="mainn">
 
 
-
             <form action="/createSlip" method="POST">
-                <div id="block">
-                    <label for="description">Description:</label><br>
+                <div id="block" class="monospace">
+                    <label for="description" id="L1">Description:</label><br>
                     <input type="text" id="description" name="description" required><br>
                 </div>
-                <div id="check1">
+                <div id="check1" class="monospace">
                     <label for="category">Category:</label><br>
                     <select id="category" name="category">
                         <option value="Personal">Personal</option>
@@ -26,24 +29,36 @@
                         <option value="Spiritual">Spiritual</option>
                     </select>
                 </div>
-                <div id="check2">
-                    <label for="date">Due Date:</label><br>
-                    <input type="date" id="date" name="date" ><br>
+                <div id="check2" class="monospace">
+                    <label id="L2" for="date">Due Date:</label><br>
+                    <input type="date" id="date" name="date"><br>
                 </div>
-                <div id="btnSubmit"> <button type="submit">Submit</button>
+                <div>
+                    <div id="btnSubmit" class="monospace">
+                        <button type="submit" class="buttonStyle"><i class="fas fa-address-book"></i>
+                            &nbsp;Submit</button>
+                        <span><button type="button" class="buttonStyle"><i class="fas fa-address-book"></i>
+                                &nbsp;Delete</button></span>
+
+                    </div>
                 </div>
+
             </form>
 
 
-            
+
             <div>
-                <ul id="set">
+                <ul id="set" class="a">
                     <% for(let i of workk){
                 %>
                     <li id="contactSlip">
-                        <div> <%=i.description%> </div>
-                        <div> <%=i.category%> </div>
-                        <div> <%=i.date%> </div>
+                        <div id="aabb">
+                            <span class="monospace mainTXT"> <%=i.description%>
+                            </span>
+                            <span class="buttonStyle2"> <%=i.category%> </span>
+                        </div>
+                        <div class="monospace txt"><i class="fas fa-address-book"></i>
+                             Due Date: <%=i.date%> </div>
                     </li>
 
                     <%
