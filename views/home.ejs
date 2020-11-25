@@ -23,11 +23,14 @@
             <div>
                 <div id="check1" class="monospace">
                     <label for="category">Category:</label><br>
-                    <select id="category" name="category">
-                        <option value="Personal">Personal</option>
-                        <option value="Work">Work</option>
-                        <option value="Home">Home</option>
-                        <option value="Spiritual">Spiritual</option>
+                    <select id="category" name="category" class="dropBtn">
+
+                        <div class="dropdown-content">
+                            <option  value="Personal">Personal</option>
+                            <option value="Work">Work</option>
+                            <option value="Home">Home</option>
+                            <option value="Spiritual">Spiritual</option>
+                        </div>
                     </select>
                 </div>
 
@@ -45,7 +48,7 @@
         </form>
         <form action="/deleteIT" method="POST">
 
-            <span><input type="submit" id="delBTN" class="buttonStyle monospace" value="Delete"></button></span>
+            <span><input type="submit"  id="delBTN" class="buttonStyle monospace" value="Delete"></button></span>
 
             <div>
                 <ul id="set" class="a">
@@ -54,12 +57,12 @@
                     <li id="contactSlip">
 
                         <div id="aabb">
-                            <span> <input type="checkbox" id="checkBlock" name="checkDelete">
+                            <span> <input type="checkbox" id="checkBlock" name="<%=i.description %>" >
                             </span>
                             <span class="monospace mainTXT"> <%=i.description%>
                             </span>
                         </div>
-
+                     
                         <span class="buttonStyle2"> <%=i.category%> </span>
                         <div class="monospace txt"><i class="fas fa-address-book"></i>
                             Due Date: <%=i.date%> </div>
@@ -79,7 +82,7 @@
 
 
 
-
+<script type="text/javascript" src="../myassets/jsFiles/home.js"></script>
 </body>
 
 </html>

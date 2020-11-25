@@ -28,21 +28,17 @@ module.exports.create = function (req, res) {
 };
 
 module.exports.delete = function (req, res) {
-    console.log(req.body);
 
+    var k = Object.keys(req.body);
 
+    for (var i = 0; i < k.length; i++) {
+        for (const j in cl) {
 
-//     let slipNO=req.query.cl;
-//     console.log(req.query);
-//     console.log(slipNO);
-
-// //    let indexCount =cl.findIndex(num => num.blockD==phone);
-// //     if(indexCount != -1){
-// //         cl.splice(indexCount, 1);
-    
-//     console.log(req.body);
-//     let number=cl.indexOf(num => num.description==);
-//     console.log(number);
+            if (cl[j].description == k[i]) {
+                cl.splice(j, 1);
+            }
+        }
+    }
     return res.redirect('/');
 
 };
