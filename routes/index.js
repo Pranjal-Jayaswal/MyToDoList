@@ -7,6 +7,7 @@ const homeController = require('../controllers/home_controller');
 //serving the get request with a response action 
 router.get('/', homeController.home);
 router.post('/createSlip',homeController.create);
+router.post('/deleteIT',homeController.delete);
 
 
 //to access this router in the supreme index.js file

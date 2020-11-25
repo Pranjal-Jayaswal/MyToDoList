@@ -2,13 +2,13 @@
 let cl = [
     {
         description: 'picalo',
-        category: '1234567',
-        date:'2012-12-19',
-    }, 
+        category: 'Spiritual',
+        date: '2012-12-19',
+    },
     {
         description: 'pranjal',
-        category: '1234567',
-        date:'2012-12-19',
+        category: 'Home',
+        date: '2012-12-19',
     },
 
 ];
@@ -21,8 +21,14 @@ module.exports.home = function (req, res) {
 
 }
 module.exports.create = function (req, res) {
-    
-     cl.push(req.body);
-     return res.redirect('/');
+
+    cl.push(req.body);
+    return res.redirect('/');
+
+};
+
+module.exports.delete = function (req, res) {
+    cl.pop(req.body);
+    return res.redirect('/');
 
 };

@@ -12,8 +12,20 @@
     align-items: center;
 }
 
-#mainn {
-    display: contents;
+#form1 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+div h1 {
+    text-decoration: rgb(14, 129, 230);
+    padding: 10px;
+    -webkit-text-stroke-width: thin;
+    border-bottom: 2px solid black;
 }
 
 #L1 {
@@ -24,17 +36,8 @@
     padding-left: 17%;
 }
 
-div h1 {
-    text-decoration: rgb(14, 129, 230);
-    padding: 10px;
-    -webkit-text-stroke-width: thin;
-    border-bottom: 2px solid black;
-}
-
-#block {
-    padding-left: 16%;
-    margin: inherit;
-    margin-top: 18px;
+#check0 {
+    margin: 5% 0px;
 }
 
 #check1 {
@@ -50,12 +53,16 @@ div h1 {
 }
 
 #btnSubmit {
-    padding-top: 20px;
-    padding-left: 19px;
-    display: inline-block;
+    padding: 3% 2%;
+}
+
+#delBTN {
+    padding: 2% 4%;
+    margin: -4% 73.5%;
 }
 
 .buttonStyle {
+    border-radius: 12px;
     background-color: #4CAF50;
     border: none;
     color: white;
@@ -64,16 +71,7 @@ div h1 {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
     cursor: pointer;
-}
-
-.buttonStyle2 {
-    display: inline;
-    margin-left: 66%;
-    background-color: rgb(123 61 140);
-    color: rgb(232, 230, 227);
-    padding: 5px 12px;
 }
 
 .monospace {
@@ -107,8 +105,10 @@ ul.a {
     max-width: fit-content;
 }
 
-#aabb {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+.buttonStyle2 {
+    display: inline;
+    margin-left: 66%;
+    background-color: rgb(123 61 140);
+    color: rgb(232, 230, 227);
+    padding: 5px 12px;
 }
