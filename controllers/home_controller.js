@@ -12,18 +12,40 @@ let cl = [
     },
 
 ];
+const Listt = require('../models/listSchema');
 module.exports.home = function (req, res) {
+    Listt.find({}, function (err, cl) {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        return res.render('home', {
+            title: "toDOlist",
+            workk: cl,
+        })
+    })
+    // return res.render('home', {
+    //     title: "toDOlist",
+    //     workk: cl,
+    // });
 
-    return res.render('home', {
-        title: "toDOlist",
-        workk: cl,
-    });
-
-}
+};
 module.exports.create = function (req, res) {
 
-    cl.push(req.body);
-    return res.redirect('/');
+    // cl.push(req.body);
+    Listt.create({
+        description: req.body.description,
+        category: req.body.category,
+        date: req.body.date
+    }, function (err, mylistt) {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        console.log('####', mylistt);
+        return res.redirect('/');
+
+    })
 
 };
 

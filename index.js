@@ -1,12 +1,13 @@
 const express=require('express');
+const path = require('path');
+const db=require('./config/mongoose');
 const app=express();
 
 const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: true }));
 const port =8000;
 
-const db=require('./config/mongoose');
-const List=require ('./models/listSchema'); 
+
 
 //middleware directing requests to routes folder
 app.use('/', require('./routes'));
@@ -18,7 +19,7 @@ app.use(express.static('myassets'));
 
 //setting different fields for the created express app
 app.set('view engine','ejs');
-app.set('views','./views');
+app.set('views',path.join(__dirname, 'views'));
 
 
 //directing the app to the port(port is a kind of channel) through/on which it will work

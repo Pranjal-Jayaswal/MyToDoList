@@ -13,7 +13,6 @@
             <h1><i class="fas fa-address-book"></i> &nbsp;ToDo App</h1>
         </div>
 
-
         <form action="/createSlip" method="POST" id="form1">
 
             <div id="check0" class="monospace">
@@ -23,32 +22,31 @@
             <div>
                 <div id="check1" class="monospace">
                     <label for="category">Category:</label><br>
-                    <select id="category" name="category" class="dropBtn">
+                    <input id="category" list="ategoryy" name="category" class="dropBtn" required>
 
-                        <div class="dropdown-content">
-                            <option  value="Personal">Personal</option>
-                            <option value="Work">Work</option>
-                            <option value="Home">Home</option>
-                            <option value="Spiritual">Spiritual</option>
-                        </div>
-                    </select>
+                    <datalist class="dropdown-content" id="ategoryy">
+                        <option value="Personal">Personal</option>
+                        <option value="Work">Work</option>
+                        <option value="Home">Home</option>
+                        <option value="Spiritual">Spiritual</option>
+                    </datalist>
+
                 </div>
 
                 <div id="check2" class="monospace">
                     <label id="L2" for="date">Due Date:</label><br>
-                    <input type="date" id="date" name="date"><br>
+                    <input type="date" id="date" name="date" required><br>
                 </div>
             </div>
-
-
 
             <div id="btnSubmit" class="monospace">
                 <button type="submit" class="buttonStyle"><i class="fas fa-address-book"></i>
                     &nbsp;Submit</button></div>
         </form>
+
         <form action="/deleteIT" method="POST">
 
-            <span><input type="submit"  id="delBTN" class="buttonStyle monospace" value="Delete"></button></span>
+            <span><input type="submit" id="delBTN" class="buttonStyle monospace" value="Delete"></button></span>
 
             <div>
                 <ul id="set" class="a">
@@ -57,32 +55,21 @@
                     <li id="contactSlip">
 
                         <div id="aabb">
-                            <span> <input type="checkbox" id="checkBlock" name="<%=i.description %>" >
+                            <span> <input type="checkbox" id="checkBlock" name="<%=i.description %>">
                             </span>
                             <span class="monospace mainTXT"> <%=i.description%>
                             </span>
                         </div>
-                     
+
                         <span class="buttonStyle2"> <%=i.category%> </span>
                         <div class="monospace txt"><i class="fas fa-address-book"></i>
                             Due Date: <%=i.date%> </div>
                     </li>
         </form>
-
-        <%
-                } %>
-
+        <%}%>
         </ul>
     </div>
     </div>
-
-
-
-
-
-
-
-<script type="text/javascript" src="../myassets/jsFiles/home.js"></script>
+<!-- useeeeeeeeee        relative path starting from where u guided to fetch static files and not from root directory<script type="text/javascript" src="../myassets/jsFiles/home.js"></script> -->
 </body>
-
 </html>

@@ -1,8 +1,8 @@
 #mainBlock {
     margin: auto;
-    width: 60%;
+    width: 40%;
     min-width: fit-content;
-    background-color: cornflowerblue;
+    background-color: saddlebrown;
     box-shadow: 2px 10px 20px 10px #4442b9;
     display: flex;
     flex-wrap: wrap;
@@ -38,32 +38,34 @@ div h1 {
 }
 
 #check0 {
-    margin: 5% 0px;
+    margin: 10% 0% 0% 0%;
 }
 
 #check1 {
-    padding: 10px;
+    margin: 2% -8% 0% 5%;
+    padding: 11px;
     display: inline-block;
 }
 
 #check2 {
+    margin-left: -6%;
+
     padding: 7px;
     display: inline-block;
 }
 
 .dropBtn {
     padding: 2.5px;
+    width: 78%;
+
     font-size: 16px;
     color:black;
     font-family: inherit;
-    margin: 0;
 }
 
 .dropdown-content {
     display: none;
-    position: absolute;
     background-color: #f9f9f9;
-    min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }

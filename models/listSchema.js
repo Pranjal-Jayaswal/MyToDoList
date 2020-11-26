@@ -5,15 +5,15 @@ const listSchema =new mongoose.Schema({
         type: String,
         required:true,
     },
-    type :{
+    category :{
         type:String,
         required:true,
+    },
+    date:{
+        type:Date,
+        required:true,
     }
-    // dueDate:{
-    //     type:D,
-    //     required:true,
-    // }
 })
 
-const List =mongoose.model('List',listSchema);
-module.exports=List;
+const Listt =mongoose.model('List',listSchema);
+module.exports=Listt;
