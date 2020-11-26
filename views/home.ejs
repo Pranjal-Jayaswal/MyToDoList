@@ -35,7 +35,7 @@
 
                 <div id="check2" class="monospace">
                     <label id="L2" for="date">Due Date:</label><br>
-                    <input type="date" id="date" name="date" required><br>
+                    <input type="date" id="date" name="date" required pattern="\d{4}-\d{2}-\d{2}" required><br>
                 </div>
             </div>
 
@@ -55,7 +55,7 @@
                     <li id="contactSlip">
 
                         <div id="aabb">
-                            <span> <input type="checkbox" id="checkBlock" name="<%=i.description %>">
+                            <span> <input type="checkbox" id="checkBlock" name="<%=i.id %>">
                             </span>
                             <span class="monospace mainTXT"> <%=i.description%>
                             </span>

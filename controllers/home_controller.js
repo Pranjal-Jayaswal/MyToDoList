@@ -1,18 +1,6 @@
-
-let cl = [
-    {
-        description: 'picalo',
-        category: 'Spiritual',
-        date: '2012-12-19',
-    },
-    {
-        description: 'pranjal',
-        category: 'Home',
-        date: '2012-12-19',
-    },
-
-];
+const { db } = require('../models/listSchema');
 const Listt = require('../models/listSchema');
+
 module.exports.home = function (req, res) {
     Listt.find({}, function (err, cl) {
         if (err) {
@@ -28,7 +16,6 @@ module.exports.home = function (req, res) {
     //     title: "toDOlist",
     //     workk: cl,
     // });
-
 };
 module.exports.create = function (req, res) {
 
@@ -44,23 +31,28 @@ module.exports.create = function (req, res) {
         }
         console.log('####', mylistt);
         return res.redirect('/');
-
     })
-
 };
 
 module.exports.delete = function (req, res) {
-
+    console.log(req.body);
     var k = Object.keys(req.body);
-
     for (var i = 0; i < k.length; i++) {
-        for (const j in cl) {
+        console.log(k[i]);
+        Listt.findByIdAndDelete(k[i] ,function (err, docs) { 
+            if (err){ 
+                console.log(err) 
+            } 
+            else{ 
+                console.log("Deleted : ", docs); 
+            } 
+        }); 
+        // for (const j in Listt) {
 
-            if (cl[j].description == k[i]) {
-                cl.splice(j, 1);
-            }
-        }
+        //     if (Listt[j].description == k[i]) {
+        //         Listt.splice(j, 1);
+        //     }
+        // }
     }
     return res.redirect('/');
-
 };
