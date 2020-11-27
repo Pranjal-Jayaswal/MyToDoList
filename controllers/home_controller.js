@@ -1,4 +1,3 @@
-const { db } = require('../models/listSchema');
 const Listt = require('../models/listSchema');
 
 module.exports.home = function (req, res) {
@@ -18,6 +17,7 @@ module.exports.home = function (req, res) {
     // });
 };
 module.exports.create = function (req, res) {
+    console.log(req.body.date);
 
     // cl.push(req.body);
     Listt.create({
