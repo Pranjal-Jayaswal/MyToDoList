@@ -6,6 +6,21 @@ module.exports.home = function (req, res) {
             console.log(err);
             return;
         }
+        console.log(cl[0]);
+
+        if(cl[0]==undefined){
+            const temp= [{
+                description:" Please firstly add some work ToDo",
+                category:'Category',
+                date:' '
+            }];
+            console.log(temp);
+
+            return res.render('home', {
+                title: "toDOlist",
+                workk:temp,
+            }) 
+        }
         return res.render('home', {
             title: "toDOlist",
             workk: cl,
