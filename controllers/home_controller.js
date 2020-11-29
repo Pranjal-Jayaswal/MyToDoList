@@ -1,38 +1,39 @@
+//importing the specified schema 
 const Listt = require('../models/listSchema');
 
+
+//response function for home page which asks database to return data it has  there by render the page accordingly
 module.exports.home = function (req, res) {
     Listt.find({}, function (err, cl) {
         if (err) {
             console.log(err);
             return;
         }
-        console.log(cl[0]);
-
-        if(cl[0]==undefined){
-            const temp= [{
-                description:" Please firstly add some work ToDo",
-                category:'Category',
-                date:' '
+        //if satatemen here to track if no todo_work enter then guide user to add some work first          
+        if (cl[0] == undefined) {
+            const temp = [{
+                description: " Please firstly add some work ToDo",
+                category: 'Category',
+                date: ' '
             }];
-            console.log(temp);
-
             return res.render('home', {
                 title: "toDOlist",
-                workk:temp,
-            }) 
+                workList: temp,
+            })
         }
         return res.render('home', {
             title: "toDOlist",
-            workk: cl,
+            workList: cl,
         })
     })
     // return res.render('home', {
     //     title: "toDOlist",
-    //     workk: cl,
+    //     workList: cl,
     // });
 };
+
+//exporting response function for createing new task using the form filled and render back the updated page
 module.exports.create = function (req, res) {
-    console.log(req.body.date);
 
     // cl.push(req.body);
     Listt.create({
@@ -49,21 +50,19 @@ module.exports.create = function (req, res) {
     })
 };
 
+//exporting response function for deleting a task and render back the updated page
 module.exports.delete = function (req, res) {
-    console.log(req.body);
     var k = Object.keys(req.body);
     for (var i = 0; i < k.length; i++) {
-        console.log(k[i]);
-        Listt.findByIdAndDelete(k[i] ,function (err, docs) { 
-            if (err){ 
-                console.log(err) 
-            } 
-            else{ 
-                console.log("Deleted : ", docs); 
-            } 
-        }); 
+        Listt.findByIdAndDelete(k[i], function (err, docs) {
+            if (err) {
+                console.log(err)
+            }
+            else {
+                console.log("Deleted : ", docs);
+            }
+        });
         // for (const j in Listt) {
-
         //     if (Listt[j].description == k[i]) {
         //         Listt.splice(j, 1);
         //     }

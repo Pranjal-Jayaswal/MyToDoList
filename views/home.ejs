@@ -2,8 +2,9 @@
 
 <head>
     <title><%=title%></title>
+<!-- _______________font awesome link for accesing icons___________ -->
     <script src="https://kit.fontawesome.com/52f6d7bc9d.js" crossorigin="anonymous"></script>
-
+<!-- _______________relative link to css file (starting from where already specified in express.static)___________ -->
     <link rel="stylesheet" href="./cssFiles/home.css">
 </head>
 
@@ -12,6 +13,7 @@
         <div class="monospace">
             <h1 id="heading"><i class="fas fa-briefcase"></i> &nbsp;ToDo App</h1>
         </div>
+<!--________________________ form which lets user enter work-ToDo from and post it in DB      ______________________________________________   -->
 
         <form action="/createSlip" method="POST" id="form1">
 
@@ -44,30 +46,34 @@
                     &nbsp;Submit</button></div>
         </form>
 
+
+<!--________________________ form which lets user delete workSlip from DB on selecting the checkbox and pressing on delete btn ______________________________________________   -->
+
         <form action="/deleteIT" method="POST">
 
             <span><input type="submit" id="delBTN" class="buttonStyle monospace" value="Delete"> </span>
 
             <div>
+        <!--_______________ using js here to display workSlip by iterating over it from DB (through variable workList)________________________ -->
                 <ul id="set" class="a">
-                    <% for(let i of workk){
+                    <% for(let i of workList){
                     %>
                     <li id="contactSlip">
                         <div id="content">
-                            <div id="checkBlock22"><input type="checkbox"  name="<%=i.id %>">
+                            <div id="checkBlock22"><input type="checkbox" name="<%=i.id %>">
                             </div>
                             <div id="descriptionBlock" class="monospace mainTXT"> • <%=i.description%>
                             </div>
-                           
                         </div>
                         <span class="buttonStyle2"></i><%=i.category%> </span>
                         <div class="monospace txt"><i class="fas fa-tired"></i>
-                            Due Date: <%=i.date%> </div>
+                            Due Date: <%=i.date%>
+                        </div>
                     </li>
+                    <%}%>
+                </ul>
+            </div>
         </form>
-        <%}%>
-        </ul>
-    </div>
     </div>
 <!-- useeeeeeeeee        relative path starting from where u guided to fetch static files and not from root directory<script type="text/javascript" src="../myassets/jsFiles/home.js"></script> -->
 </body>

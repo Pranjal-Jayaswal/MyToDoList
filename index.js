@@ -1,11 +1,16 @@
 const express=require('express');
 const path = require('path');
+const port =8000;
+
+//importing  mongoose connection
 const db=require('./config/mongoose');
+
+
 const app=express();
 
+//to convert form data for us in workable format
 const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: true }));
-const port =8000;
 
 
 
