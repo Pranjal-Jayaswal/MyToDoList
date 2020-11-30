@@ -12,7 +12,7 @@ module.exports.home = function (req, res) {
         //if satatemen here to track if no todo_work enter then guide user to add some work first          
         if (cl[0] == undefined) {
             const temp = [{
-                description: " Please firstly add some work ToDo",
+                description: " Please firstly add some work ToDo.",
                 category: 'Category',
                 date: ' '
             }];
